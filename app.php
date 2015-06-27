@@ -5,8 +5,9 @@ require_once 'vendor/autoload.php';
 use App\ReportBuilder;
 use App\Report;
 
-$filename = 'logs/api.access.log';
+$filename = 'logs/access.log';
 
+/** @var ReportBuilder $reportBuilder */
 $reportBuilder = new ReportBuilder($filename);
 $report = $reportBuilder->buildReport();
 
