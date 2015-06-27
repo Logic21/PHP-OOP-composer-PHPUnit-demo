@@ -6,7 +6,7 @@ use App\ReportBuilder;
 use App\Report;
 
 if (isset($_FILES['log']) === false) {
-    throw new Exception('Log file was not sent');
+    throw new Exception('Log file was not sent, use "upload.html" file');
 }
 
 $filename = $_FILES['log']['tmp_name'];

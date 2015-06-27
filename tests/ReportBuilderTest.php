@@ -29,7 +29,7 @@ class ReportBuilderTest extends AbstractTestCase
         $this->assertEquals($report->getAverageNumberOfHits(), 7443);
 
     }
-    
+
     public function testReportBuilderAccessLogTwo()
     {
         $filename = realpath(__DIR__ . '/../logs/accessTwo.log');
