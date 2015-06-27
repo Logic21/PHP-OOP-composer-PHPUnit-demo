@@ -1,9 +1,10 @@
 About
 -----------------------------------
-Script analyse uploaded access.log file and outputs following as result:<br/>
-- number of hits / day (for each day)<br/>
-- number of unique visitors / day (for each day)<br/>
-- average number of hits / visitor (for the whole period)<br/>
+Script analyse uploaded access.log file and outputs following as result:
+
+ * number of hits / day (for each day)
+ * number of unique visitors / day (for each day)
+ * average number of hits / visitor (for the whole period)
 
 
 Installation
