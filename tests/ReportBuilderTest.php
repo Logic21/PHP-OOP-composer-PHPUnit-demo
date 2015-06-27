@@ -14,9 +14,10 @@ use PHPUnit_Framework_TestCase as AbstractTestCase;
 
 class ReportBuilderTest extends AbstractTestCase
 {
-    public function testReportBuilder()
+
+    public function testReportBuilderAccessLogOne()
     {
-        $filename = realpath(__DIR__ . '/../logs/access.log');
+        $filename = realpath(__DIR__ . '/../logs/accessOne.log');
 
         /** @var ReportBuilder $reportBuilder */
         $reportBuilder = new ReportBuilder($filename);
@@ -24,9 +25,23 @@ class ReportBuilderTest extends AbstractTestCase
         $report = $reportBuilder->buildReport();
 
         $this->assertEquals(count($report->getHits()), 16);
-        $this->assertEquals($report->getHits()['23/12/2014'], 9);
         $this->assertEquals(count($report->getVisitors()), 16);
-        $this->assertEquals($report->getVisitors()['23/12/2014'], 1);
         $this->assertEquals($report->getAverageNumberOfHits(), 7443);
+
+    }
+    
+    public function testReportBuilderAccessLogTwo()
+    {
+        $filename = realpath(__DIR__ . '/../logs/accessTwo.log');
+
+        /** @var ReportBuilder $reportBuilder */
+        $reportBuilder = new ReportBuilder($filename);
+        /** @var Report $report */
+        $report = $reportBuilder->buildReport();
+
+        $this->assertEquals(count($report->getHits()), 6);
+        $this->assertEquals(count($report->getVisitors()), 6);
+        $this->assertEquals($report->getAverageNumberOfHits(), 2);
+
     }
 }

@@ -5,13 +5,25 @@ require_once 'vendor/autoload.php';
 use App\ReportBuilder;
 use App\Report;
 
-$filename = 'logs/access.log';
+if (isset($_FILES['log']) === false) {
+    throw new Exception('Log file was not sent');
+}
 
+$filename = $_FILES['log']['tmp_name'];
 /** @var ReportBuilder $reportBuilder */
 $reportBuilder = new ReportBuilder($filename);
+/** @var Report $report */
 $report = $reportBuilder->buildReport();
 
-/** @var Report $report */
-var_dump($report->getHits());
-var_dump($report->getVisitors());
-var_dump($report->getAverageNumberOfHits());
+// KISS principle in action :)
+echo " Average for all period:<pre>";
+print_r($report->getAverageNumberOfHits());
+echo "</pre>";
+
+echo " Hits:<pre>";
+print_r($report->getHits());
+echo "</pre>";
+
+echo " Visitors:<pre>";
+print_r($report->getVisitors());
+echo "</pre>";
