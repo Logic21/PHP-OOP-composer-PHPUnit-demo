@@ -9,15 +9,18 @@ Script analyse uploaded access.log file and outputs following as result:
 
 Installation
 -----------------------------------
-php composer.phar install
+* Clone repo with `git clone`
+* cd starofservice
+* run `php composer.phar install`
 
 https://getcomposer.org/download/
 
 
 Running Tests
 -----------------------------------
-[PHPUnit](https://phpunit.de/) <br/>
-`vendor/bin/phpunit tests/ReportBuilderTest.php`<br/>
+[PHPUnit](https://phpunit.de/)
+
+`vendor/bin/phpunit tests/ReportBuilderTest.php`
 
 
 Questions
